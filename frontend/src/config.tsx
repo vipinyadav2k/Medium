@@ -1,0 +1,1 @@
+export const BACKEND_URL = "https://backend.vipinyadav2k.workers.dev"
