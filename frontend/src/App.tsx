@@ -11,7 +11,11 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Blogs />} />
+          if(localStorage.getItem("token") == null) {
+            <Route path="/" element={<Signin />} />
+          } else {
+            <Route path="/" element={<Blogs />} />
+          }
           <Route path="/signup" element={<Signup />} />
           <Route path="/signin" element={<Signin />} />
           <Route path="/blog/:id" element={<Blog />} />
