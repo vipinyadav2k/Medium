@@ -4,7 +4,12 @@ import { BlogSkeleton } from "../components/BlogSkeleton";
 import { useBlogs } from "../hooks";
 
 export const Blogs = () => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+        window.location.href = "/signin";
+    }
     const { loading, blogs } = useBlogs();
+    
     if (loading) {
         return <div>
             <Appbar /> 

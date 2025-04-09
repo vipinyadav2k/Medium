@@ -10,6 +10,10 @@ export const Blog = () => {
     const {loading, blog} = useBlog({
         id: id || ""
     });
+    const token = localStorage.getItem("token");
+    if (!token) {
+        window.location.href = "/signin";
+    }
 
     if (loading || !blog) {
         return <div>
