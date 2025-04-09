@@ -1,4 +1,4 @@
-                                                                                               #This is Medium Clone. 
+                                                  #This is Medium Clone. 
 
 Deployed on: https://medium-vy.vercel.app
 
