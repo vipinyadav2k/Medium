@@ -28,4 +28,6 @@ model Blog {
   published Boolean  @default(false)
   author    User    @relation(fields: [authorId], references: [id])
   authorId  Int
+  mainImage String?
+  publishedAt DateTime? @default(now())
 }

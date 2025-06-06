@@ -7,6 +7,8 @@ export interface Blog {
     "content": string;
     "title": string;
     "id": number
+    "publishedAt": string;
+    "mainImage": string;
     "author": {
         "name": string
     }
@@ -47,6 +49,7 @@ export const useBlogs = () => {
         })
             .then(response => {
                 setBlogs(response.data.blog);
+                console.log(response.data.blog);
                 setLoading(false);
             })
     }, [])

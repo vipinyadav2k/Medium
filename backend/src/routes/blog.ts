@@ -49,11 +49,13 @@ blogRouter.post("/", async (c) => {
     data: {
       title: body.title,
       content: body.content,
+      mainImage: body.mainImage,
       authorId: Number(authorId),
     },
   });
   return c.json({
     id: blog.id,
+    authorId: blog.authorId,
   });
 });
 
@@ -92,10 +94,13 @@ blogRouter.get("/bulk", async (c) => {
       select: {
         content: true,
         title: true,
+        publishedAt: true,
+        mainImage: true,
         id: true,
         author: {
           select: {
-            name: true,
+            id: true,
+            name: true, // 👈 Add this
           },
         },
       },
@@ -106,42 +111,43 @@ blogRouter.get("/bulk", async (c) => {
     });
   } catch (error) {
     c.status(404);
-    return c.json({ error: "Blog not found" ,
-      message: error,
-    });
+    return c.json({ error: "Blog not found", message: error });
   }
 });
 
-blogRouter.get('/:id', async (c) => {
-    const id = c.req.param("id");
-    const prisma = new PrismaClient({
-      datasourceUrl: c.env.DATABASE_URL,
-    }).$extends(withAccelerate())
+blogRouter.get("/:id", async (c) => {
+  const id = c.req.param("id");
+  const prisma = new PrismaClient({
+    datasourceUrl: c.env.DATABASE_URL,
+  }).$extends(withAccelerate());
 
-    try {
-        const blog = await prisma.blog.findFirst({
-            where: {
-                id: id
-            },
-            select: {
-                id: true,
-                title: true,
-                content: true,
-                author: {
-                    select: {
-                        name: true
-                    }
-                }
-            }
-        })
-    
-        return c.json({
-            blog
-        });
-    } catch(e) {
-        c.status(411); // 4
-        return c.json({
-            message: "Error while fetching blog post"
-        });
-    }
-})
+  try {
+    const blog = await prisma.blog.findFirst({
+      where: {
+        id: id,
+      },
+      select: {
+        id: true,
+        title: true,
+        content: true,
+        publishedAt: true,
+        mainImage: true,
+        author: {
+          select: {
+            id: true,
+            name: true, // 👈 Add this
+          },
+        },
+      },
+    });
+
+    return c.json({
+      blog,
+    });
+  } catch (e) {
+    c.status(411); // 4
+    return c.json({
+      message: "Error while fetching blog post",
+    });
+  }
+});

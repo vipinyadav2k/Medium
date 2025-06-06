@@ -26,8 +26,6 @@ export const Blogs = () => {
             <BlogSkeleton />
             <BlogSkeleton />
             <BlogSkeleton />
-            <BlogSkeleton />
-            <BlogSkeleton />
           </div>
         </ContentWrapper>
       </div>
@@ -46,7 +44,12 @@ export const Blogs = () => {
               authorName={blog.author.name || "Anonymous"}
               title={blog.title}
               content={blog.content}
-              publishedDate={"2nd Feb 2024"}
+              mainImage={blog.mainImage}
+              publishedDate={new Date(blog.publishedAt).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
             />
           ))}
         </div>
