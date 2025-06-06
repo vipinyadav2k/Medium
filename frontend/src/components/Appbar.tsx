@@ -1,17 +1,29 @@
-import { Avatar } from "./BlogCard"
-import { Link } from "react-router-dom"
+import { FaPen } from "react-icons/fa6";
+import { Avatar } from "./BlogCard";
+import { Link } from "react-router-dom";
 
 export const Appbar = () => {
-    return <div className="border-b flex justify-between px-10 py-4">
-        <Link to={'/blogs'} className="flex flex-col justify-center cursor-pointer">
-                Medium
-        </Link>
-        <div>
-            <Link to={`/publish`}>
-                <button type="button" className="mr-4 text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 ">New</button>
-            </Link>
+  return (
+    <div className="bg-white border-b shadow-sm flex justify-between items-center px-6 py-4">
+      {/* Logo */}
+      <Link to="/blogs" className="font-serif text-2xl font-bold text-black hover:opacity-80 transition">
+        Medium
+      </Link>
 
-            <Avatar size={"big"} name="Vipin Yadav" />
-        </div>
+      {/* Right Side */}
+      <div className="flex items-center gap-5">
+        <Link to="/publish">
+          <button
+            type="button"
+            className="flex items-center gap-2 text-black border border-gray-300 hover:bg-gray-100 font-medium rounded-full text-sm px-4 py-1.5 transition"
+          >
+            <FaPen className="text-sm" />
+            Write
+          </button>
+        </Link>
+
+        <Avatar size="big" name="Vipin Yadav" />
+      </div>
     </div>
-}
+  );
+};
