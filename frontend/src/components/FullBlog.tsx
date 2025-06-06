@@ -7,7 +7,7 @@ export const FullBlog = ({ blog }: { blog: Blog }) => {
     <div className="min-h-screen bg-white text-gray-900">
       <Appbar />
 
-      <div className="flex justify-center px-4 sm:px-8 md:px-10 pt-16">
+      <div className="flex justify-center px-4 sm:px-8 md:px-10 pt-16 mb-40">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-x-8 w-full max-w-screen-xl">
           {/* Main Blog Content */}
           <div className="md:col-span-8 space-y-6">
