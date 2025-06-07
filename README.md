@@ -3,8 +3,8 @@
 </h1>
 
 <p align="center">
-![image](https://github.com/user-attachments/assets/40d89b3b-9b9d-4275-b933-0f30cf6ef6b3)</p>
-
+  <img src="https://i.giphy.com/media/13GIgrGdslD9oQ/giphy.gif" width="500" alt="Typing Frenzy" />
+</p>
 
 <p align="center">
   <a href="https://medium-vy.vercel.app" target="_blank">
