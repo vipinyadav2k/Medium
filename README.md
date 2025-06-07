@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  <img src="https://i.giphy.com/media/13GIgrGdslD9oQ/giphy.gif" width="500" alt="Typing Frenzy" />
+  <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExenp2NjF3NmU5YjM3c3p4c21pZHVmcHNvZW1uZjhndGc3dm5kaDJucSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/pOZhmE42D1WrCWATLK/giphy.gif" width="500" alt="Typing Frenzy" />
 </p>
 
 <p align="center">
