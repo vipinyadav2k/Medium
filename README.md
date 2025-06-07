@@ -63,7 +63,7 @@ Hono Backend (Cloudflare Workers)
 
 ```
 
-🙌 Contributing
+🙌
 Contributions are welcome! Whether it's a bug fix, feature suggestion, or code enhancement, feel free to open a PR or an issue. Let's build this together!
 
 📬 Connect
